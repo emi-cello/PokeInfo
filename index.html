@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PokeInfo</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="script.js"></script>
+</head>
+<body>
+    <header>
+    <nav class="navbar">
+        <!--
+        <img class="logo" src="img/pokeball_blue.png">
+        -->
+        
+        <div class="nav-title">PokeInfo</div>
+            <input id="search" placeholder="Pokemon">
+            <button class="send" onclick="pokeSearch()">Send</button>
+            </div>
+            <ul id="menu" class="nav-link">
+                <li><a href="#">Text</a></li>
+                <li><a href="#">Text</a></li>
+                <li><a href="#">Text</a></li>
+                <li><a href="#">Text</a></li>
+                <li class="credits"><a>Made By - Emi-Cello</a></li>
+            </ul>
+        <button id="nav-menu" onclick="toggleMenu()" aria-label="Toggle navigation">
+            -
+        </button>
+    </nav>
+    </header>
+    <h1 id="pokemon-name">Loading...</h1>
+    <p>PokeDex Nr:</p>
+    <p id="pokemon-Dex">Loading...</p>
+    <div class="pokemon-sprites">
+        <img id="pokemon-front" width="160">
+        <img id="pokemon-back" width="160">
+        <button id="shiny" onclick="toggleShiny()">Shiny</button>
+    </div>
+    <div id="stats">
+        <p id="stats-hp">Loading...</p>
+        <p id="stats-atk">Loading...</p>
+        <p id="stats-def">Loading...</p>
+        <p id="stats-spa">Loading...</p>
+        <p id="stats-spd">Loading...</p>
+        <p id="stats-spe">Loading...</p>
+    </div>
+</body>
+</html>

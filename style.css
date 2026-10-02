@@ -1,0 +1,177 @@
+:root {
+    --highlight: #E1F5FE;
+    --ui: #4FC3F7;
+    --bg: #0288D1;
+    --bgdark: #0A192F;
+    --text: #B3E5FC;
+    --accent: #33B5E5;
+    --accent2: #005B94;
+    --accentdark: #0B1D33;
+}
+
+body {
+    background: linear-gradient(180deg, hsla(201, 98%, 41%, 1) 0%, hsla(203, 100%, 29%, 1) 100%);
+    color: var(--text)
+}
+
+.bg {
+    width: 32.5vw;
+    height: 50vh;
+    z-index: -1;
+    justify-self: center;
+    display: block;
+    align-self: center;
+}
+
+.logo {
+    height: 40px;
+    width: 40px ;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: color-mix(in srgb, var(--ui) 20%, transparent);
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 10; 
+}
+
+.navbar li a {
+    text-decoration: none;
+    color:var(--text);
+    display: block;
+    text-align: center;
+    
+}
+
+.nav-link {
+    border-radius: 5px;
+    border-left:2px solid color-mix(in srgb, var(--ui) 40%, transparent);
+    background-color: color-mix(in srgb, var(--bg) 20%, transparent);
+    position: fixed;
+    top: 0;
+    right: -400px;
+    width: 300px;
+    height: 100vh;
+    margin: 0;
+    padding: 100px 30px 30px 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    list-style: none;
+    transition: right 0.4s ease-out;
+    backdrop-filter: blur(4px);
+}
+
+#nav-menu {
+    margin-left: auto;
+    display: block;
+    background: none;
+    border: none;
+    font-size: 35px;
+    cursor: pointer;
+    transition: transform 0.4s ease-out;
+    z-index: 100; 
+    color: var(--text);
+    }
+
+.nav-link.active {
+    right:0;
+}
+
+.nav-title {
+    text-align: left;
+    font-size: 20px;
+}
+
+.pokemon-sprites {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+}
+
+.pokemon-sprites img {
+    width: 150px;
+    image-rendering: pixelated;
+}
+
+#shiny {
+    display: flex;
+    align-self: center;
+    background-color: color-mix(in srgb, var(--ui) 20%, transparent);
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    margin-bottom: 50px;
+    max-width: 97px;
+    text-align: center;
+}
+
+#search {
+    justify-self: flex-end;
+    margin-left:auto;
+    display: flex;
+    align-self: center;
+    background-color: color-mix(in srgb, var(--ui) 20%, transparent);
+    border-radius: 5px;
+    border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    text-align: center;
+    margin-right: 10px;
+    color: var(--text);
+}
+
+#search::placeholder {
+    color: color-mix(in srgb, var(--text) 60%, transparent);
+}
+
+.send {
+    justify-self: flex-end;
+    display: flex;
+    align-self: center;
+    background-color: color-mix(in srgb, var(--ui) 20%, transparent);
+    border-radius: 5px;
+    border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+    text-align: center;
+    color: var(--text)
+}
+
+.credits {
+    font-size: 20px;
+}
+
+#stats {
+    display: flex;
+    align-items: end;
+    flex-direction: column;
+    margin-right: 50px;
+
+}
+
+#stats-hp {
+    color: #4caf50;
+}
+
+#stats-atk {
+    color: #f44336;
+}
+
+#stats-def {
+    color: #2196f3;
+}
+
+#stats-spa {
+    color: #9c27b0;
+}
+
+#stats-spd {
+    color: #00bcd4;
+}
+
+#stats-spe {
+    color: #ffc107;
+}
