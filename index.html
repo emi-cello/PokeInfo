@@ -6,7 +6,7 @@
     <title>PokeInfo</title>
     <link rel="stylesheet" href="style.css">
     <link rel="icon" type="image/png" href="img/Pokeball_red.png">
-    <script type="text/javascript" src="script.js"></script>
+    <script type="text/javascript" src="script.js" defer></script>
 </head>
 <body>
     <header>
@@ -32,7 +32,9 @@
     </nav>
     </header>
     <h1 id="pokemon-name">Loading...</h1>
-    <p>PokeDex Nr:</p>
+    <h1 id="pokemon-type">Loading...</h1>
+    <h1 id="pokemon-type-secondary">Loading...</h1>
+    <p id="dex">PokeDex Nr:</p>
     <p id="pokemon-Dex">Loading...</p>
     <div class="pokemon-sprites">
         <img id="pokemon-front" width="160">
@@ -40,12 +42,36 @@
         <button id="shiny" onclick="toggleShiny()">Shiny</button>
     </div>
     <div id="stats">
-        <p id="stats-hp">Loading...</p>
-        <p id="stats-atk">Loading...</p>
-        <p id="stats-def">Loading...</p>
-        <p id="stats-spa">Loading...</p>
-        <p id="stats-spd">Loading...</p>
-        <p id="stats-spe">Loading...</p>
+        <span>Health</span>
+            <p id="stats-hp">...Hp</p>
+        <div class="bar">
+            <div id="hp-bar" class="fill-hp"></div>
+        </div>
+        <span>Attack</span>
+            <p id="stats-atk">...atk</p>
+        <div class="bar">
+            <div id="atk-bar" class="fill-atk"></div>
+        </div>
+        <span>Defence</span>
+            <p id="stats-def">...def</p>
+        <div class="bar">
+            <div id="def-bar" class="fill-def"></div>
+        </div>
+        <span>Special Attack</span>
+            <p id="stats-spa">...spa</p>
+        <div class="bar">
+            <div id="spa-bar" class="fill-spa"></div>
+        </div>
+        <span>Special Defence</span>
+            <p id="stats-spd">...spd</p>
+        <div class="bar">
+            <div id="spd-bar" class="fill-spd"></div>
+        </div>
+        <span>Speed</span>
+            <p id="stats-spe">...spe</p>
+        <div class="bar">
+            <div id="spe-bar" class="fill-spe"></div>
+        </div>
     </div>
 </body>
 </html>
