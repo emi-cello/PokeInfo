@@ -94,7 +94,10 @@ body {
 .pokemon-sprites {
     display: flex;
     justify-content: flex-end;
+    position: fixed;
     gap: 20px;
+    top: 85px;
+    right: 0px;
 }
 
 .pokemon-sprites img {
@@ -153,6 +156,9 @@ body {
     flex-direction: column;
     margin-right: 50px;
     color: #000000;
+    position: fixed;
+    right: 0px;
+    top: 225px;
 }
 
 .fill-hp,
@@ -218,4 +224,10 @@ body {
 
 #pokemon-Dex {
     width: 60px;
+}
+
+footer {
+    position: fixed;
+    bottom: 0px;
+    left: 50%;
 }
