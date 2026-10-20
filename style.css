@@ -231,3 +231,33 @@ footer {
     bottom: 0px;
     left: 50%;
 }
+
+#form {
+    display: none;
+    background-color: color-mix(in srgb, var(--ui) 20%, transparent);
+    padding: 15px 30px;
+    border-radius: 5px;
+    border: 2px solid color-mix(in srgb, var(--accent) 40%, transparent);
+
+    max-width: 97px;
+    text-align: center;
+}
+
+#shiny,
+#form,
+.send {
+    transition: ease 0.3s;
+}
+
+#shiny:hover,
+#form:hover,
+.send:hover {
+    background-color: color-mix(in srgb, var(--accent2) 20%, transparent);
+    border: 2px solid color-mix(in srgb, var(--accentdark) 40%, transparent);
+}
+#shiny:active,
+#form:active,
+.send:active {
+    background-color: color-mix(in srgb, var(--text) 20%, transparent);
+    border: 2px solid color-mix(in srgb, var(--ui) 40%, transparent);
+}

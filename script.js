@@ -56,6 +56,8 @@ function pokeRefresh() {
 
       document.getElementById("pokemon-type").innerHTML = data.types["0"].type.name;
 
+      
+
       if (data.types.length > 1) {
         const type2 = data.types[1].type.name;
 
@@ -107,6 +109,30 @@ function pokeRefresh() {
       document.getElementById("spd-bar").style.width = `${spd / 255 * 100}%`;
       document.getElementById("spe-bar").style.width = `${spe / 255 * 100}%`;
 
+      if (pokemonName == "minior-red-meteor") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Metior Form";
+      }
+      if (pokemonName == "minior-red") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Red Form";
+      }
+      if (pokemonName == "minior-orange") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Orange Form";
+      }
+      if (pokemonName == "minior-yellow") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Yellow Form";
+      }
+      if (pokemonName == "minior-green") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Green Form";
+      }
+      if (pokemonName == "minior-blue") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Blue Form";
+      }
+      if (pokemonName == "minior-indigo") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Indigo Form";
+      }
+      if (pokemonName == "minior-violet") {
+        document.getElementById("pokemon-name").innerHTML = "Minior Violet Form";
+      }
     })
     .catch(error => console.error("Error fetching data:", error));
 }
@@ -133,8 +159,8 @@ function toggleShiny() {
       .then(response => response.json())
       .then(data => {
         document.getElementById("shiny").innerHTML = "Normal";
-        document.getElementById("pokemon-front").src = data.sprites.versions["generation-v"]["black-white"].animated.front_shiny;
-        document.getElementById("pokemon-back").src = data.sprites.versions["generation-v"]["black-white"].animated.back_shiny;
+        document.getElementById("pokemon-front").src = data.sprites.versions["generation-v"]["black-white"].animated.front_shiny || data.sprites.versions["generation-v"]["black-white"].front_shiny;
+        document.getElementById("pokemon-back").src = data.sprites.versions["generation-v"]["black-white"].animated.back_shiny || data.sprites.versions["generation-v"]["black-white"].back_shiny;
       });
     } else { if (shinyTrue == 1);
       shinyTrue -= 1;
@@ -143,8 +169,8 @@ function toggleShiny() {
       .then(response => response.json())
       .then(data => {
         document.getElementById("shiny").innerHTML = "Shiny";
-        document.getElementById("pokemon-front").src = data.sprites.versions["generation-v"]["black-white"].animated.front_default;
-        document.getElementById("pokemon-back").src = data.sprites.versions["generation-v"]["black-white"].animated.back_default;
+        document.getElementById("pokemon-front").src = data.sprites.versions["generation-v"]["black-white"].animated.front_default || data.sprites.versions["generation-v"]["black-white"].front_default;
+        document.getElementById("pokemon-back").src = data.sprites.versions["generation-v"]["black-white"].animated.back_default || data.sprites.versions["generation-v"]["black-white"].back_default;
       });
   }
 }
@@ -152,6 +178,22 @@ function toggleShiny() {
 function pokeSearch() {
   const search = document.getElementById("search")
   pokemonName = search.value;
+  if (pokemonName == 'minior') {
+        pokemonName = 'minior-red-meteor'
+        document.getElementById("form").style.display = "flex";
+  } else {
+    if (pokemonName == '774') {
+      pokemonName = 'minior-red-meteor'
+      document.getElementById("form").style.display = "flex";
+    } else {
+      if (pokemonName == 'deoxys') {
+        pokemonName = 'deoxys-normal'
+        document.getElementById("form").style.display = "flex";
+      } else {
+        document.getElementById("form").style.display = "none";
+      }
+    }
+  }
   console.log("Searching for: ", pokemonName);
   pokeRefresh();
 }
@@ -161,3 +203,55 @@ document.getElementById("search").addEventListener("keydown", function(event) {
         pokeSearch();
     }
 });
+
+function changeForm() {
+
+  if (pokemonName == 'minior-red-meteor') {
+    pokemonName = "minior-red"
+  } else {
+    if (pokemonName == 'minior-red') {
+      pokemonName = "minior-orange"
+    } else {
+      if (pokemonName == 'minior-orange') {
+        pokemonName = "minior-yellow"
+      } else {
+        if (pokemonName == 'minior-yellow') {
+          pokemonName = "minior-green"
+        } else {
+          if (pokemonName == 'minior-green') {
+            pokemonName = "minior-blue"
+          } else {
+            if (pokemonName == 'minior-blue') {
+              pokemonName = "minior-indigo"
+            } else {
+              if (pokemonName == 'minior-indigo') {
+                pokemonName = "minior-violet"
+              } else {
+                if (pokemonName == 'minior-violet') {
+                  pokemonName = "minior-red-meteor"
+                } else {
+                  if (pokemonName == 'deoxys-normal') {
+                    pokemonName = "deoxys-attack"
+                  } else {
+                    if (pokemonName == 'deoxys-attack') {
+                      pokemonName = "deoxys-defense"
+                    } else {
+                      if (pokemonName == 'deoxys-defense') {
+                        pokemonName = "deoxys-speed"
+                      } else {
+                        if (pokemonName == 'deoxys-speed') {
+                          pokemonName = "deoxys-normal"
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  pokeRefresh()
+}
