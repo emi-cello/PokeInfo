@@ -110,7 +110,7 @@ function pokeRefresh() {
       document.getElementById("spe-bar").style.width = `${spe / 255 * 100}%`;
 
       if (pokemonName == "minior-red-meteor") {
-        document.getElementById("pokemon-name").innerHTML = "Minior Metior Form";
+        document.getElementById("pokemon-name").innerHTML = "Minior Meteor Form";
       }
       if (pokemonName == "minior-red") {
         document.getElementById("pokemon-name").innerHTML = "Minior Red Form";
